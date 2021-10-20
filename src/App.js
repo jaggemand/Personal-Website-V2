@@ -15,7 +15,16 @@ import {
   InboxIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import Top from "./components/top"
+import AboutMe from "./components/about"
+import FAQ from "./components/faq"
+import EDUCATION from "./components/education"
+import CONTACT_ME from './components/contact'
+import WHOAMI from './components/who'
+import MODAL from './components/modal.js'
+import NOTIFICATION from './components/notification'
+import EXPERIENCE from './components/experience'
+import SKILLS from './components/skills'
 
 const solutions = [
   {
@@ -38,29 +47,23 @@ const solutions = [
     icon: QuestionMarkCircleIcon,
   },
 ]
-const navigateme = [
-  { name: 'Pricing', href: '#' },
-  { name: 'Partners', href: '#' },
-  { name: 'Company', href: '#' },
-]
-
 
 const navigation = [
-  { name: 'Home', href: '#', icon: HomeIcon, current: true },
-  { name: 'About Me', href: '#', icon: UserIcon, current: false },
-  { name: 'Experience', href: '#', icon: BriefcaseIcon, current: false },
-  { name: 'Education', href: '#', icon: AcademicCapIcon, current: false },
-  { name: 'Skills', href: '#', icon: ChartPieIcon, current: false },
-  { name: 'Contact Me', href: '#', icon: MailIcon, current: false },
+  { name: 'Home', href: '#home-section', icon: HomeIcon, current: false },
+  { name: 'About Me', href: '#about-me-section', icon: UserIcon, current: false },
+  { name: 'Experience', href: '#experience-section', icon: BriefcaseIcon, current: false },
+  { name: 'Education', href: '#education-section', icon: AcademicCapIcon, current: false },
+  { name: 'Skills', href: '#skills-section', icon: ChartPieIcon, current: false },
+  { name: 'Contact Me', href: '#contact-me-section', icon: MailIcon, current: false },
 ]
 const footer = {
   navigation_section: [
-    { name: 'Home', href: '#' },
-    { name: 'About Me', href: '#' },
-    { name: 'Experience', href: '#' },
-    { name: 'Education', href: '#' },
-    { name: 'Skills', href: '#' },
-    { name: 'Contact Me', href: '#' },
+    { name: 'Home', href: '#home-section' },
+    { name: 'About Me', href: '#about-me-section' },
+    { name: 'Experience', href: '#experience-section' },
+    { name: 'Education', href: '#education-section' },
+    { name: 'Skills', href: '#skills-section' },
+    { name: 'Contact Me', href: '#contact-me-section' },
   ],
   social: [
     {
@@ -102,12 +105,12 @@ const footer = {
       name: 'LinkedIn',
       href: 'https://www.linkedin.com/in/jacob-kyed-andreassen/',
       icon: (props) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+        <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">  
           <path
             fillRule="evenodd"
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+            d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
             clipRule="evenodd"
-          />
+            />
         </svg>
       ),
     },
@@ -135,6 +138,8 @@ function classNames(...classes) {
 }
 
   return (
+    <>
+    {/*<NOTIFICATION />*/}
     <div className="h-screen flex overflow-hidden bg-gray-100">
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
@@ -270,12 +275,7 @@ function classNames(...classes) {
           </button>
         </div>
         <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
-          <div className="py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            </div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               {/* /Start replace -----------------------------------------------------------------------------------------------*/}
-              <div className="min-h-screen bg-white">
       <header>
         <Popover className="relative bg-white">
           {({ open }) => (
@@ -338,111 +338,40 @@ function classNames(...classes) {
       </header>
 
       <main>
-        <div>
-          {/* Hero card */}
-          <div className="relative">
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-              <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
-                <div className="absolute inset-0">
-                  <img
-                    className="h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                    alt="People working on laptops"
-                  />
-                  <div className="absolute inset-0 bg-green-600 mix-blend-multiply" />
-                </div>
-                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    <span className="block text-white">Jacob Kyed</span>
-                    <span className="block text-green-200">Andreassen</span>
-                  </h1>
-                  <p className="mt-6 max-w-lg mx-auto text-center text-xl text-green-200 sm:max-w-3xl">
-                    Computer Science Student
-                  </p>
-                  <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-                    <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                      <a
-                        href="#"
-                        className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-green-700 bg-white hover:bg-green-50 sm:px-8"
-                      >
-                        About Me
-                      </a>
-                      <a
-                        href="#"
-                        className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8"
-                      >
-                        Contact Me
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <Top />
+        
+        <AboutMe />
+        <WHOAMI />
+        <EXPERIENCE />
+        <div className="bg-white">
+        <MODAL />
 
-          {/* Logo cloud */}
-          <div className="bg-gray-100">
-            <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-              <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
-                Tailoring Solutions For The Customers Needs
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
-                </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <img className="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
-                </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                    alt="StaticKit"
-                  />
-                </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                    alt="Transistor"
-                  />
-                </div>
-                <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                    alt="Workcation"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/*<FAQ />*/}
 
-        {/* More main page content here... */}
-      </main>
+        <EDUCATION />
+           
     </div>
-              {/* /End replace --------------------------------------------------------*/}
-            </div>
-          </div>
-        </main>
-      </div>
-      {/* New Section test---------------------------------------------------------------------------------- */}
-      {/*<footer className="bg-gray-800" aria-labelledby="footer-heading">
+      </main>
+
+    <SKILLS />
+    
+    <CONTACT_ME />
+
+    {/* /Footer Section --------------------------------------------------------*/}
+      <footer className="bg-gray-100" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div className="max-w-7xl mx-auto py-12 px-6">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="grid grid-cols-2 gap-8 xl:col-span-4">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Navigation</h3>
+                <h3 className="text-sm font-semibold text-gray-800 tracking-wider uppercase">Navigation</h3>
                 <ul className="mt-4 space-y-4">
                   {footer.navigation_section.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-300 hover:text-white">
+                      <a href={item.href} className="text-base text-gray-600 hover:text-gray-500">
                         {item.name}
                       </a>
                     </li>
@@ -452,21 +381,24 @@ function classNames(...classes) {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+        <div className="mt-8 border-t border-gray-800 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {footer.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
+              <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-500">
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </a>
             ))}
           </div>
-          <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+          <p className="mt-8 text-base text-gray-600 md:mt-0 md:order-1">
             Copyright &copy; 2021 Jacob Kyed Andreassen
           </p>
         </div>
       </div>
-    </footer>*/}
-    </div>
+    </footer>
+        </main>
+      </div>
+      </div>
+    </>
   )
 }
