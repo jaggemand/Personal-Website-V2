@@ -13,4 +13,3 @@ Currently the website is a work in progress, however, if you have any suggestion
 ## Maintainers
 
 The only maintainers currently is myself.
-
