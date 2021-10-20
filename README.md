@@ -3,7 +3,7 @@
 <p align="center">
     <a href="https://kyed3.dk/"><img src="https://img.shields.io/badge/Website-Link-blue?style=for-the-badge" /></a>
     <img src="https://img.shields.io/website?down_color=critical&down_message=Offline&label=Website%20Status&style=for-the-badge&up_color=success&up_message=Online&url=https%3A%2F%2Fkyed3.dk%2F" />
-    <img src="https://img.shields.io/github/v/tag/jaggemand/personal-website?color=red&label=Website%20version&style=for-the-badge" />
+    <img src="https://img.shields.io/github/v/release/jaggemand/personal-website-v2?color=critical&label=Release%20Version&style=for-the-badge" />
 </p>
 
 ## Information
