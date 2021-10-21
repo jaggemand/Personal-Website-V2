@@ -121,7 +121,7 @@ return (
                   <img
                     className="w-13 h-13 md:w-20 md:h-20 rounded-full"
                     src={img_me}
-                    alt="Small picture of me"
+                    alt="This is me"
                   />
                 </div>
                 <span className="relative ml-4 text-green-300 font-semibold leading-6 sm:ml-24 sm:pl-1">
