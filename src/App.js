@@ -1,5 +1,13 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState } from 'react'
+import Top from "./components/top"
+import AboutMe from "./components/about"
+import WHOAMI from './components/who'
+import EXPERIENCE from './components/experience'
+import EDUCATION from "./components/education"
+import SKILLS from './components/skills'
+import MODAL from './components/modal.js'
+import CONTACT_ME from './components/contact'
 import { Dialog, Transition, Popover } from '@headlessui/react'
 import {
   AcademicCapIcon,
@@ -15,16 +23,6 @@ import {
   InboxIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/react/outline'
-import Top from "./components/top"
-import AboutMe from "./components/about"
-import FAQ from "./components/faq"
-import EDUCATION from "./components/education"
-import CONTACT_ME from './components/contact'
-import WHOAMI from './components/who'
-import MODAL from './components/modal.js'
-import NOTIFICATION from './components/notification'
-import EXPERIENCE from './components/experience'
-import SKILLS from './components/skills'
 
 const solutions = [
   {
