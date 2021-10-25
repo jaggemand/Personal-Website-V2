@@ -6,7 +6,6 @@ import WHOAMI from './components/who'
 import EXPERIENCE from './components/experience'
 import EDUCATION from "./components/education"
 import SKILLS from './components/skills'
-import MODAL from './components/modal.js'
 import CONTACT_ME from './components/contact'
 import { Dialog, Transition, Popover } from '@headlessui/react'
 import {
@@ -342,7 +341,6 @@ function classNames(...classes) {
         <WHOAMI />
         <EXPERIENCE />
         <div className="bg-white">
-        <MODAL />
 
         {/*<FAQ />*/}
 
