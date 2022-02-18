@@ -102,112 +102,153 @@ const footer = {
       name: 'LinkedIn',
       href: 'https://www.linkedin.com/in/jacob-kyed-andreassen/',
       icon: (props) => (
-        <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">  
+        <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
           <path
             fillRule="evenodd"
             d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
             clipRule="evenodd"
-            />
+          />
         </svg>
       ),
     },
     {
-    name: 'Mail',
-    href: 'mailto:jaggemand@gmail.com',
-    icon: (props) => (
-      <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-        clipRule="evenodd"
-      />
-      </svg>
-    ),
-  },
+      name: 'Mail',
+      href: 'mailto:jaggemand@gmail.com',
+      icon: (props) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
   ],
 }
 
 export default function Example() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 
   return (
     <>
-    {/*<NOTIFICATION />*/}
-    <div className="h-screen flex overflow-hidden bg-gray-100">
-      <Transition.Root show={sidebarOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          static
-          className="fixed inset-0 flex z-40 md:hidden"
-          open={sidebarOpen}
-          onClose={setSidebarOpen}
-        >
-          <Transition.Child
-            as={Fragment}
-            enter="transition-opacity ease-linear duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity ease-linear duration-300"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+      {/*<NOTIFICATION />*/}
+      <div className="h-screen flex overflow-hidden bg-gray-100">
+        <Transition.Root show={sidebarOpen} as={Fragment}>
+          <Dialog
+            as="div"
+            static
+            className="fixed inset-0 flex z-40 md:hidden"
+            open={sidebarOpen}
+            onClose={setSidebarOpen}
           >
-            <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75" />
-          </Transition.Child>
-          <Transition.Child
-            as={Fragment}
-            enter="transition ease-in-out duration-300 transform"
-            enterFrom="-translate-x-full"
-            enterTo="translate-x-0"
-            leave="transition ease-in-out duration-300 transform"
-            leaveFrom="translate-x-0"
-            leaveTo="-translate-x-full"
-          >
-            <div className="relative flex-1 flex flex-col max-w-xs w-full bg-gray-800">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-in-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in-out duration-300"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="absolute top-0 right-0 -mr-12 pt-2">
-                  <button
-                    className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    onClick={() => setSidebarOpen(false)}
-                  >
-                    <span className="sr-only">Close sidebar</span>
-                    <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
-                  </button>
+            <Transition.Child
+              as={Fragment}
+              enter="transition-opacity ease-linear duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition-opacity ease-linear duration-300"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+            </Transition.Child>
+            <Transition.Child
+              as={Fragment}
+              enter="transition ease-in-out duration-300 transform"
+              enterFrom="-translate-x-full"
+              enterTo="translate-x-0"
+              leave="transition ease-in-out duration-300 transform"
+              leaveFrom="translate-x-0"
+              leaveTo="-translate-x-full"
+            >
+              <div className="relative flex-1 flex flex-col max-w-xs w-full bg-gray-800">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-in-out duration-300"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="ease-in-out duration-300"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <div className="absolute top-0 right-0 -mr-12 pt-2">
+                    <button
+                      className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      <span className="sr-only">Close sidebar</span>
+                      <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                    </button>
+                  </div>
+                </Transition.Child>
+                <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+                  <div className="flex-shrink-0 flex items-center px-4">
+                    <img
+                      className="h-8 w-auto"
+                      src="https://i.imgur.com/GtY4Ne8.png      "
+                      alt="Workflow"
+                    />
+                  </div>
+                  <nav className="mt-5 px-2 space-y-1">
+                    {navigation.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'group flex items-center px-2 py-2 text-base font-medium rounded-md'
+                        )}
+                      >
+                        <item.icon
+                          className={classNames(
+                            item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
+                            'mr-4 flex-shrink-0 h-6 w-6'
+                          )}
+                          aria-hidden="true"
+                        />
+                        {item.name}
+                      </a>
+                    ))}
+                  </nav>
                 </div>
-              </Transition.Child>
-              <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                <div className="flex-shrink-0 flex items-center px-4">
+              </div>
+            </Transition.Child>
+            <div className="flex-shrink-0 w-14">{/* Force sidebar to shrink to fit close icon */}</div>
+          </Dialog>
+        </Transition.Root>
+
+        {/* Static sidebar for desktop */}
+        <div className="hidden md:flex md:flex-shrink-0">
+          <div className="flex flex-col w-64">
+            {/* Sidebar component, swap this element with another sidebar if you like */}
+            <div className="flex flex-col h-0 flex-1 bg-gray-800">
+              <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+                <div className="flex items-center flex-shrink-0 px-4">
                   <img
                     className="h-8 w-auto"
-                    src="https://i.imgur.com/GtY4Ne8.png      "
+                    src="https://i.imgur.com/GtY4Ne8.png"
                     alt="Workflow"
                   />
                 </div>
-                <nav className="mt-5 px-2 space-y-1">
+                <nav className="mt-5 flex-1 px-2 bg-gray-800 space-y-1">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
                       className={classNames(
                         item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'group flex items-center px-2 py-2 text-base font-medium rounded-md'
+                        'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                       )}
                     >
                       <item.icon
                         className={classNames(
                           item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
-                          'mr-4 flex-shrink-0 h-6 w-6'
+                          'mr-3 flex-shrink-0 h-6 w-6'
                         )}
                         aria-hidden="true"
                       />
@@ -216,184 +257,143 @@ function classNames(...classes) {
                   ))}
                 </nav>
               </div>
-            </div>
-          </Transition.Child>
-          <div className="flex-shrink-0 w-14">{/* Force sidebar to shrink to fit close icon */}</div>
-        </Dialog>
-      </Transition.Root>
 
-      {/* Static sidebar for desktop */}
-      <div className="hidden md:flex md:flex-shrink-0">
-        <div className="flex flex-col w-64">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex flex-col h-0 flex-1 bg-gray-800">
-            <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-              <div className="flex items-center flex-shrink-0 px-4">
-                <img
-                  className="h-8 w-auto"
-                  src="https://i.imgur.com/GtY4Ne8.png"
-                  alt="Workflow"
-                />
-              </div>
-              <nav className="mt-5 flex-1 px-2 bg-gray-800 space-y-1">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
-                    )}
-                  >
-                    <item.icon
-                      className={classNames(
-                        item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
-                        'mr-3 flex-shrink-0 h-6 w-6'
-                      )}
-                      aria-hidden="true"
-                    />
-                    {item.name}
-                  </a>
-                ))}
-              </nav>
             </div>
-
           </div>
         </div>
-      </div>
-      <div className="flex flex-col w-0 flex-1 overflow-hidden">
-        <div className="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
-          <button
-            className="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-            onClick={() => setSidebarOpen(true)}
-          >
-            <span className="sr-only">Open sidebar</span>
-            <MenuIcon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
-              {/* /Start replace -----------------------------------------------------------------------------------------------*/}
-      <header>
-        <Popover className="relative bg-white">
-          {({ open }) => (
-            <>
-              <Transition
-                show={open}
-                as={Fragment}
-                enter="duration-200 ease-out"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="duration-100 ease-in"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Popover.Panel
-                  focus
-                  static
-                  className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-                >
-                  <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                    <div className="pt-5 pb-6 px-5">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <img
-                            className="h-8 w-auto"
-                            src="https://i.imgur.com/GtY4Ne8.png"
-                            alt="Workflow"
-                          />
-                        </div>
-                        <div className="-mr-2">
-                          <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                            <span className="sr-only">Close menu</span>
-                            <XIcon className="h-6 w-6" aria-hidden="true" />
-                          </Popover.Button>
-                        </div>
-                      </div>
-                      <div className="mt-6">
-                        <nav className="grid grid-cols-1 gap-7">
-                          {solutions.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
-                            >
-                              <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
-                                <item.icon className="h-6 w-6" aria-hidden="true" />
+        <div className="flex flex-col w-0 flex-1 overflow-hidden">
+          <div className="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
+            <button
+              className="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              onClick={() => setSidebarOpen(true)}
+            >
+              <span className="sr-only">Open sidebar</span>
+              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
+            {/* /Start replace -----------------------------------------------------------------------------------------------*/}
+            <header>
+              <Popover className="relative bg-white">
+                {({ open }) => (
+                  <>
+                    <Transition
+                      show={open}
+                      as={Fragment}
+                      enter="duration-200 ease-out"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="duration-100 ease-in"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <Popover.Panel
+                        focus
+                        static
+                        className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+                      >
+                        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                          <div className="pt-5 pb-6 px-5">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <img
+                                  className="h-8 w-auto"
+                                  src="https://i.imgur.com/GtY4Ne8.png"
+                                  alt="Workflow"
+                                />
                               </div>
-                              <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
-                            </a>
+                              <div className="-mr-2">
+                                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                  <span className="sr-only">Close menu</span>
+                                  <XIcon className="h-6 w-6" aria-hidden="true" />
+                                </Popover.Button>
+                              </div>
+                            </div>
+                            <div className="mt-6">
+                              <nav className="grid grid-cols-1 gap-7">
+                                {solutions.map((item) => (
+                                  <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
+                                  >
+                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
+                                      <item.icon className="h-6 w-6" aria-hidden="true" />
+                                    </div>
+                                    <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
+                                  </a>
+                                ))}
+                              </nav>
+                            </div>
+                          </div>
+                        </div>
+                      </Popover.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Popover>
+            </header>
+
+            <main>
+              <Top />
+
+              <AboutMe />
+              <WHOAMI />
+              <EXPERIENCE />
+              <div className="bg-white">
+
+                {/*<FAQ />*/}
+
+                <EDUCATION />
+
+              </div>
+            </main>
+
+            <SKILLS />
+
+            <CONTACT_ME />
+
+            {/* /Footer Section --------------------------------------------------------*/}
+            <footer className="bg-gray-100" aria-labelledby="footer-heading">
+              <h2 id="footer-heading" className="sr-only">
+                Footer
+              </h2>
+              <div className="max-w-7xl mx-auto py-12 px-6">
+                <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+                  <div className="grid grid-cols-2 gap-8 xl:col-span-4">
+                    <div className="md:grid md:grid-cols-2 md:gap-8">
+                      <div>
+                        <h3 className="text-sm font-semibold text-gray-800 tracking-wider uppercase">Navigation</h3>
+                        <ul className="mt-4 space-y-4">
+                          {footer.navigation_section.map((item) => (
+                            <li key={item.name}>
+                              <a href={item.href} className="text-base text-gray-600 hover:text-gray-500">
+                                {item.name}
+                              </a>
+                            </li>
                           ))}
-                        </nav>
+                        </ul>
                       </div>
                     </div>
                   </div>
-                </Popover.Panel>
-              </Transition>
-            </>
-          )}
-        </Popover>
-      </header>
-
-      <main>
-        <Top />
-        
-        <AboutMe />
-        <WHOAMI />
-        <EXPERIENCE />
-        <div className="bg-white">
-
-        {/*<FAQ />*/}
-
-        <EDUCATION />
-           
-    </div>
-      </main>
-
-    <SKILLS />
-    
-    <CONTACT_ME />
-
-    {/* /Footer Section --------------------------------------------------------*/}
-      <footer className="bg-gray-100" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-      <div className="max-w-7xl mx-auto py-12 px-6">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-4">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold text-gray-800 tracking-wider uppercase">Navigation</h3>
-                <ul className="mt-4 space-y-4">
-                  {footer.navigation_section.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-600 hover:text-gray-500">
-                        {item.name}
+                </div>
+                <div className="mt-8 border-t border-gray-800 pt-8 md:flex md:items-center md:justify-between">
+                  <div className="flex space-x-6 md:order-2">
+                    {footer.social.map((item) => (
+                      <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-500">
+                        <span className="sr-only">{item.name}</span>
+                        <item.icon className="h-6 w-6" aria-hidden="true" />
                       </a>
-                    </li>
-                  ))}
-                </ul>
+                    ))}
+                  </div>
+                  <p className="mt-8 text-base text-gray-600 md:mt-0 md:order-1">
+                    Copyright &copy; 2021 Jacob Kyed Andreassen
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
+            </footer>
+          </main>
         </div>
-        <div className="mt-8 border-t border-gray-800 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-6 md:order-2">
-            {footer.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-500">
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-          <p className="mt-8 text-base text-gray-600 md:mt-0 md:order-1">
-            Copyright &copy; 2021 Jacob Kyed Andreassen
-          </p>
-        </div>
-      </div>
-    </footer>
-        </main>
-      </div>
       </div>
     </>
   )

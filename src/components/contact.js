@@ -2,7 +2,7 @@
 export default function CONTACT_ME() {
 
   return (
-    <div className="bg-gray-800 py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24" id="contact-me-section">
+    <div className="bg-gray-50 py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24" id="contact-me-section">
       <div className="relative max-w-xl mx-auto">
         <svg
           className="absolute left-full transform translate-x-1/2"
@@ -21,7 +21,7 @@ export default function CONTACT_ME() {
               height={20}
               patternUnits="userSpaceOnUse"
             >
-              <rect x={0} y={0} width={4} height={4} className="text-gray-600" fill="currentColor" />
+              <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
             </pattern>
           </defs>
           <rect width={404} height={404} fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)" />
@@ -49,15 +49,15 @@ export default function CONTACT_ME() {
           <rect width={404} height={404} fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)" />
         </svg>
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-200 sm:text-4xl">Contact Me</h2>
-          <p className="mt-4 text-lg leading-6 text-gray-200">
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Contact Me</h2>
+          <p className="mt-4 text-lg leading-6 text-gray-500">
             Fill in the form below to send me an email. I will try to get in touch with you as soon as possible.
           </p>
         </div>
         <div className="mt-12">
           <form action="#" method="POST" className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div>
-              <label htmlFor="first-name" className="block text-sm font-medium text-gray-200">
+              <label htmlFor="first-name" className="block text-sm font-medium text-gray-500">
                 First name
               </label>
               <div className="mt-1">
@@ -71,7 +71,7 @@ export default function CONTACT_ME() {
               </div>
             </div>
             <div>
-              <label htmlFor="last-name" className="block text-sm font-medium text-gray-200">
+              <label htmlFor="last-name" className="block text-sm font-medium text-gray-500">
                 Last name
               </label>
               <div className="mt-1">
@@ -85,7 +85,7 @@ export default function CONTACT_ME() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-200">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-500">
                 Email
               </label>
               <div className="mt-1">
@@ -99,7 +99,7 @@ export default function CONTACT_ME() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-200">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-500">
                 Message
               </label>
               <div className="mt-1">

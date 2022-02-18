@@ -19,7 +19,7 @@ export default function WHOAMI() {
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Who am I?</h2>
               <p className="text-xl text-gray-500">
                 At what moment do you become an adult, cross the line and leave your childhood behind? It's an old question,
-                people have been thinking about. However, I consider myself to be an adult, even though I'm only 21 years old and therefore
+                people have been thinking about. However, I consider myself to be an adult, even though I'm only 21 years old.
                 I have a burning passion for software developing and want to pursue this carrer for the rest of my life.
               </p>
             </div>
