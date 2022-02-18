@@ -1,11 +1,11 @@
 const stats = [
-    { name: 'C', stat: '55%' },
-    { name: 'HTML', stat: '85%' },
+    { name: 'C', stat: '65%' },
+    { name: 'HTML', stat: '75%' },
     { name: 'CSS', stat: '65%' },
-    { name: 'React', stat: '50%' },
-    { name: 'Overleaf', stat: '20%' },
+    { name: 'React', stat: '40%' },
+    { name: 'Overleaf', stat: '40%' },
     { name: 'Git', stat: '40%' },
-    { name: 'JavaScript (Learning)', stat: '0%' },
+    { name: 'JavaScript', stat: '45%' },
   ]
   export default function SKILLS() {
     return (

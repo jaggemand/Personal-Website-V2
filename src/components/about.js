@@ -25,15 +25,14 @@ export default function AboutMe() {
       </div>
       <div className="sm:col-span-1">
         <dt className="text-sm font-medium text-gray-500">Hobbies</dt>
-        <dd className="mt-1 text-sm text-gray-900">Software developing and playing games</dd>
+        <dd className="mt-1 text-sm text-gray-900">Software developing</dd>
       </div>
       <div className="sm:col-span-2">
         <dt className="text-sm font-medium text-gray-500">About</dt>
         <dd className="mt-1 text-sm text-gray-900">
-        I'm Jacob, a 21 year old guy studying Computer Science at Aalborg University. I'm an upcomming fullstack developer.
+        I'm Jacob, a 21 year old male studying Computer Science at Aalborg University. I'm an upcomming developer.
         I have an ambition to expand my understanding in developing. My plan is to gain knowledge about several coding languages.
-        In my freetime I like to fiddle with code and technology. If I don't do this I try to expand my horizon with different
-        kind of new skills.
+        In my freetime I like to fiddle with programming and expanding  my horizon with different kinds of new skills.
         </dd>
       </div>
     </dl>
